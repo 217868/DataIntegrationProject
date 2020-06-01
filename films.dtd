@@ -1,0 +1,42 @@
+<?xml encoding="UTF-8"?>
+
+<!ELEMENT film_base (film)+>
+
+<!ELEMENT film (title,release_date_in_USA,countries,directors,cast,
+                duration_in_minutes,distributors,languages,
+                music_authors,box_office)>
+<!ATTLIST film
+  image_link CDATA #REQUIRED
+  year CDATA #REQUIRED>
+
+<!ELEMENT title (#PCDATA)>
+
+<!ELEMENT release_date_in_USA (#PCDATA)>
+
+<!ELEMENT countries (country)+>
+
+<!ELEMENT directors (director)+>
+
+<!ELEMENT cast (actor)+>
+
+<!ELEMENT duration_in_minutes (#PCDATA)>
+
+<!ELEMENT distributors (distributor)+>
+
+<!ELEMENT languages (language)+>
+
+<!ELEMENT music_authors (musicAuthor)+>
+
+<!ELEMENT box_office (#PCDATA)>
+
+<!ELEMENT country (#PCDATA)>
+
+<!ELEMENT director (#PCDATA)>
+
+<!ELEMENT actor (#PCDATA)>
+
+<!ELEMENT distributor (#PCDATA)>
+
+<!ELEMENT language (#PCDATA)>
+
+<!ELEMENT musicAuthor (#PCDATA)>
