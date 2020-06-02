@@ -1,9 +1,10 @@
-package films_retrieving;
+package projectdi.Logic.films_retrieving;
 
 import helpers.Const;
 import imported.HttpRequestFunctions;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -14,7 +15,7 @@ public class FilmHelper {
     private List<String> infoBox;
 
     public List<films_retrieving.Film> createFilms(List<String> urls) {
-        List<Film> list = new ArrayList<>();
+        List<films_retrieving.Film> list = new ArrayList<>();
         for (String s : urls) {
             list.add(createFilm(s));
         }
@@ -23,7 +24,7 @@ public class FilmHelper {
 
     public films_retrieving.Film createFilm(String url){
         getInfoBox(url);
-        return new Film(getTitle(),
+        return new films_retrieving.Film(getTitle(),
                 getImageLink(),
                 getYearOfRelease(),
                 getReleaseDate(),
@@ -75,12 +76,13 @@ public class FilmHelper {
         Scanner s = null;
         List<String> resultBox = new ArrayList<>();
 
-        try{
+        try {
             HttpRequestFunctions.httpRequest1(url, "", Const.OUTPUT_FILE_NAME.getValue());
             s = new Scanner(new File(Const.OUTPUT_FILE_NAME.getValue()));
-        } catch (Exception e){
-            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
 
 
         int lineCounter = 0;

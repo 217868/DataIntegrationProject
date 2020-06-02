@@ -1,15 +1,18 @@
 package projectdi.Logic.mainLogic;
 
-import data.Data;
-import films_retrieving.FilmHelper;
-import films_retrieving.FilmURLHelper;
 import helpers.Const;
 import helpers.XMLElementsToFieldsMapping;
+import projectdi.Logic.data.Data;
+import projectdi.Logic.exceptions.*;
+import projectdi.Logic.films_retrieving.FilmHelper;
+import projectdi.Logic.films_retrieving.FilmURLHelper;
+import projectdi.Logic.xml_retrieving.TransformationsHelper;
 import projectdi.Logic.xml_retrieving.ValidatorHelper;
-import xml_retrieving.TransformationsHelper;
-import xml_retrieving.XMLBuilder;
+import projectdi.Logic.xml_retrieving.XMLBuilder;
+
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,7 +27,7 @@ public class MainLogic {
     private ValidatorHelper validatorHelper;
     private TransformationsHelper transformationsHelper;
 
-    public MainLogic(){
+    public MainLogic() throws IOException, XMLNotFoundException {
         this.data = new Data();
         this.filmHelper = new FilmHelper();
         this.filmURLHelper = new FilmURLHelper();
@@ -34,19 +37,14 @@ public class MainLogic {
 
     }
 
-    public boolean validate(){
-        try {
-            return validatorHelper.validate();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return false;
+    public boolean validate() throws ValidationFailedException, IOException, XMLNotFoundException {
+        return validatorHelper.validate();
     }
-    private void addListOfFilms(List<films_retrieving.Film> films) {
+    private void addListOfFilms(List<films_retrieving.Film> films) throws IOException, XMLNotFoundException {
         xmlBuilder.addFilms(films);
     }
 
-    public void populateXMLFileFromTitlesListFile(String fileName) {
+    public void populateXMLFileFromTitlesListFile(String fileName) throws MovieNotFoundException, IOException, XMLNotFoundException {
         data.clearDocument();
         data.reloadDocumentObject();
         List<films_retrieving.Film> films = filmHelper.createFilms(filmURLHelper.getUrlsFromTitles(fileName));
@@ -57,7 +55,7 @@ public class MainLogic {
 
     }
 
-    public void addMovie(String title) {
+    public void addMovie(String title) throws MovieNotFoundException, IOException, XMLNotFoundException {
         films_retrieving.Film film = filmHelper.createFilm(filmURLHelper.searchFilmURL(title));
         if (data.getFilms().contains(film)) return; //throw
         data.getFilms().add(film);
@@ -66,7 +64,7 @@ public class MainLogic {
     }
 
 
-    public void deleteFilm(String title){
+    public void deleteFilm(String title) throws IOException, XMLNotFoundException {
         boolean doestTitleExist = false;
         int deleteIndex = -1;
         for(films_retrieving.Film f : data.getFilms()){
@@ -79,105 +77,56 @@ public class MainLogic {
 
         //todo: throw exception
         if(!doestTitleExist) return;
-        xmlBuilder.deleteFilm(title);
+        try {
+            xmlBuilder.deleteFilm(title);
+        } catch (ElementNotFoundException e) {
+            e.printStackTrace();
+        }
 
         data.saveListToFile();
     }
 
-    public void editFilm(String title, String oldValue, String newValue, XMLElementsToFieldsMapping elementName){
+    public void editFilm(String title, films_retrieving.Film film){
         films_retrieving.Film filmToEdit = null;
         for (films_retrieving.Film f : data.getFilms()) {
             if (f.getTitle().equals(title)) filmToEdit = f;
         }
-        boolean isAttribute = false;
-        switch(elementName) {
-
-            case title:
-                filmToEdit.setTitle(newValue);
-                break;
-            case image:
-                filmToEdit.setImage(newValue);
-                isAttribute = true;
-                break;
-            case durationInMinutes:
-                filmToEdit.setDurationInMinutes(Integer.parseInt(newValue));
-                break;
-            case year:
-                filmToEdit.setYear(Integer.parseInt(newValue));
-                isAttribute = true;
-                break;
-            case releaseDateInUSA:
-                Date date1 = null;
-                try {
-                    date1=new SimpleDateFormat("yyyy-MM-dd").parse(newValue);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-                filmToEdit.setReleaseDateInUSA(date1);
-                break;
-            case countries:
-                for (String country : filmToEdit.getCountries()) {
-                    if (country.equals(oldValue)) country = newValue;
-                }
-                break;
-            case directors:
-                for (String director : filmToEdit.getDirectors()) {
-                    if (director.equals(oldValue)) director = newValue;
-                }
-                break;
-            case cast:
-                for (String actor : filmToEdit.getCast()) {
-                    if (actor.equals(oldValue)) actor = newValue;
-                }
-                break;
-            case distributedBy:
-                for (String distributor : filmToEdit.getDistributedBy()) {
-                    if (distributor.equals(oldValue)) distributor = newValue;
-                }
-                break;
-            case languages:
-                for (String language : filmToEdit.getLanguages()) {
-                    if (language.equals(oldValue)) language = newValue;
-                }
-                break;
-            case musicAuthor:
-                for (String author : filmToEdit.getMusicAuthor()) {
-                    if (author.equals(oldValue)) author = newValue;
-                }
-                break;
-            case boxOffice:
-                filmToEdit.setBoxOffice(Float.parseFloat(newValue));
-                break;
+        filmToEdit = film;
+        try {
+            xmlBuilder.editElement(title, film);
+        } catch (ElementNotFoundException e) {
+            e.printStackTrace();
         }
-        if (!isAttribute)
-            xmlBuilder.editElement(title, elementName.getValue(), oldValue, newValue);
-        else
-            xmlBuilder.editAttribute(title, elementName.getValue(), newValue);
-
-        data.saveListToFile();
+        try {
+            data.saveListToFile();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (XMLNotFoundException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void getHTMLwithPhotosOfFilms(){
+    public void getHTMLwithPhotosOfFilms() throws FileNotFoundException, XMLNotFoundException, TransformationFailedException {
         transformationsHelper.getHTMLwithPhotos();
     }
 
-    public void getXMLwithDirectorsFilms(){
+    public void getXMLwithDirectorsFilms() throws FileNotFoundException, XMLNotFoundException, TransformationFailedException {
         transformationsHelper.getXMLwithDirectorsFilms();
     }
 
-    public void getTXTwithCountriesWithFilms(){
+    public void getTXTwithCountriesWithFilms() throws FileNotFoundException, XMLNotFoundException, TransformationFailedException {
         transformationsHelper.getCountriesWithFilms();
     }
 
-    public void getXMLwithActorsWithNumberOfFilms(){
+    public void getXMLwithActorsWithNumberOfFilms() throws FileNotFoundException, XMLNotFoundException, TransformationFailedException {
         transformationsHelper.getActorsWithNumberOfFilms();
     }
 
-    public void getTXTwithPopularLanguages(){
+    public void getTXTwithPopularLanguages() throws FileNotFoundException, XMLNotFoundException, TransformationFailedException {
         transformationsHelper.getPopularLanguages();
     }
 
-    public void getHTMLwithYearsWithMovies(){
+    public void getHTMLwithYearsWithMovies() throws FileNotFoundException, XMLNotFoundException, TransformationFailedException {
         transformationsHelper.getYearsWithMovies();
     }
 

@@ -1,11 +1,12 @@
 package projectdi.Logic.imported;
 
 import net.sf.saxon.s9api.*;
+import projectdi.Logic.exceptions.XMLNotFoundException;
 
 import java.io.File;
 
 public class XPathFunctions {
-    public static XdmValue executeXPath(String xp, String xmlFile) throws SaxonApiException {
+    public static XdmValue executeXPath(String xp, String xmlFile) throws SaxonApiException, XMLNotFoundException {
         XdmValue resultado = null;
         File f = new File(xmlFile);
         if (f.exists()) {
@@ -20,15 +21,7 @@ public class XPathFunctions {
             selector.setContextItem(xml);
             resultado = selector.evaluate();
         }
+        else throw new XMLNotFoundException("XML Documnet " + xmlFile + " not found");
         return resultado;
-    }
-
-    public static String getResults(XdmValue lista) {
-        StringBuilder texto = new StringBuilder();
-        System.out.println("RESULTADO DA PESQUISA XPATH:");
-        for (XdmItem item : lista) {
-            texto = texto.append(item.getStringValue()).append("\n");
-        }
-        return texto.toString();
     }
 }
