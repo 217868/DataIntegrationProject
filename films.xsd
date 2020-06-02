@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="film_base">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="film"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="film">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="title"/>
+        <xs:element ref="release_date_in_USA"/>
+        <xs:element ref="countries"/>
+        <xs:element ref="directors"/>
+        <xs:element ref="cast"/>
+        <xs:element ref="duration_in_minutes"/>
+        <xs:element ref="distributors"/>
+        <xs:element ref="languages"/>
+        <xs:element ref="music_authors"/>
+        <xs:element ref="box_office"/>
+      </xs:sequence>
+      <xs:attribute name="image_link" use="required" type="xs:anyURI"/>
+      <xs:attribute name="year" use="required" type="xs:integer"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="release_date_in_USA" type="xs:NMTOKEN"/>
+  <xs:element name="countries">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="country"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="country" type="xs:string"/>
+  <xs:element name="directors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="director"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="director" type="xs:string"/>
+  <xs:element name="cast">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="actor"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="actor" type="xs:string"/>
+  <xs:element name="duration_in_minutes" type="xs:integer"/>
+  <xs:element name="distributors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="distributor"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="distributor" type="xs:string"/>
+  <xs:element name="languages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="language"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="language" type="xs:string"/>
+  <xs:element name="music_authors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="musicAuthor"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="musicAuthor" type="xs:string"/>
+  <xs:element name="box_office" type="xs:decimal"/>
+</xs:schema>
