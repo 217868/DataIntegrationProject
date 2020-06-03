@@ -1,36 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2b67f0ee-d134-455b-a4fb-55fd3f3c4864" name="Default Changelist" comment="gui first version">
-      <change afterPath="$PROJECT_DIR$/.idea/cssdialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projectdi/Controller.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projectdi/FilmCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projectdi/FilmData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/projectdi/SearchByController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/projectdi/app.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/projectdi/filmCell.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/projectdi/searchby.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="2b67f0ee-d134-455b-a4fb-55fd3f3c4864" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/films.xml" beforeDir="false" afterPath="$PROJECT_DIR$/films.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projectdi/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projectdi/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projectdi/Logic/data/Data.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projectdi/Logic/data/Data.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/Film.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/Film.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/FilmHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/FilmHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/FilmURLHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/FilmURLHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projectdi/Logic/mainLogic/MainLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projectdi/Logic/mainLogic/MainLogic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/TransformationsHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/TransformationsHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/XMLBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/XMLBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/XPathHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/XPathHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projectdi/PrimaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projectdi/PrimaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/projectdi/SecondaryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/projectdi/SecondaryController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/projectdi/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/projectdi/primary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/projectdi/secondary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/projectdi/secondary.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/films_retrieving/Film.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/films_retrieving/Film.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/module-info.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/module-info.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/projectdi/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projectdi/App.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/projectdi/Logic/mainLogic/MainLogic$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projectdi/Logic/mainLogic/MainLogic$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/projectdi/Logic/mainLogic/MainLogic.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projectdi/Logic/mainLogic/MainLogic.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/projectdi/Logic/xml_retrieving/XPathHelper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projectdi/Logic/xml_retrieving/XPathHelper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/projectdi/PrimaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projectdi/PrimaryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/projectdi/SecondaryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projectdi/SecondaryController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/projectdi/primary.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/projectdi/primary.fxml" afterDir="false" />
@@ -63,10 +40,13 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/FilmCell.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/XPathHelper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="39" selection-start-line="2" selection-start-column="39" selection-end-line="2" selection-end-column="39" />
+            <state relative-caret-position="270">
+              <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,52 +54,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/data/Data.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-              <folding>
-                <element signature="e#651#652#0" expanded="true" />
-                <element signature="e#679#680#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/XMLBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="38" lean-forward="true" selection-start-column="8" selection-end-column="38" />
+              <caret column="28" selection-start-column="8" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5890#5891#0" expanded="true" />
-                <element signature="e#5971#5972#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/XPathHelper.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/mainLogic/MainLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+            <state relative-caret-position="34">
+              <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#1493#1494#0" expanded="true" />
+                <element signature="e#1535#1536#0" expanded="true" />
+                <element signature="e#6315#6316#0" expanded="true" />
+                <element signature="e#6354#6355#0" expanded="true" />
+                <element signature="e#6414#6415#0" expanded="true" />
+                <element signature="e#6452#6453#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/mainLogic/MainLogic.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/FilmData.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+            <state relative-caret-position="447">
+              <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
               <folding>
-                <element signature="e#1493#1494#0" expanded="true" />
-                <element signature="e#1535#1536#0" expanded="true" />
-                <element signature="e#6315#6316#0" expanded="true" />
-                <element signature="e#6354#6355#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/TransformationsHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="26" selection-start-column="26" selection-end-column="26" />
+              <caret column="38" selection-start-column="8" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -147,7 +114,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/FilmHelper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="40" lean-forward="true" selection-start-column="8" selection-end-column="40" />
+              <caret column="40" selection-start-column="8" selection-end-column="40" />
             </state>
           </provider>
         </entry>
@@ -156,7 +123,19 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/Film.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="40" />
+              <caret column="8" selection-start-column="8" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/SearchByController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -188,8 +167,6 @@
         <option value="$PROJECT_DIR$/src/main/java/projectdi/App.java" />
         <option value="$PROJECT_DIR$/src/main/java/projectdi/Controller.java" />
         <option value="$PROJECT_DIR$/src/main/resources/projectdi/filmCell.fxml" />
-        <option value="$PROJECT_DIR$/src/main/java/projectdi/FilmData.java" />
-        <option value="$PROJECT_DIR$/src/main/java/projectdi/SearchByController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/projectdi/searchby.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/projectdi/primary.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/projectdi/secondary.fxml" />
@@ -199,13 +176,15 @@
         <option value="$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/Film.java" />
         <option value="$PROJECT_DIR$/src/main/java/projectdi/PrimaryController.java" />
         <option value="$PROJECT_DIR$/src/main/java/projectdi/FilmCell.java" />
-        <option value="$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/XPathHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/XMLBuilder.java" />
-        <option value="$PROJECT_DIR$/src/main/java/projectdi/Logic/data/Data.java" />
         <option value="$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/FilmHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/projectdi/Logic/mainLogic/MainLogic.java" />
         <option value="$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/FilmURLHelper.java" />
         <option value="$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/TransformationsHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/projectdi/FilmData.java" />
+        <option value="$PROJECT_DIR$/src/main/java/projectdi/SearchByController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/XPathHelper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/projectdi/Logic/data/Data.java" />
+        <option value="$PROJECT_DIR$/src/main/java/projectdi/Logic/mainLogic/MainLogic.java" />
       </list>
     </option>
   </component>
@@ -335,7 +314,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591145530291" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1591145567549" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../project-final" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -393,7 +372,7 @@
       <updated>1591035520553</updated>
       <workItem from="1591035524449" duration="653000" />
       <workItem from="1591036698104" duration="11510000" />
-      <workItem from="1591105257669" duration="28170000" />
+      <workItem from="1591105257669" duration="28429000" />
     </task>
     <task id="LOCAL-00001" summary="additional files">
       <created>1591036918317</created>
@@ -402,17 +381,23 @@
       <option name="project" value="LOCAL" />
       <updated>1591036918317</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="gui first version">
+      <created>1591145581820</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1591145581820</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40333000" />
+    <option name="totallyTimeSpent" value="40592000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25302014" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -431,7 +416,7 @@
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="12" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -597,30 +582,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/FilmData.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="337" column="48" selection-start-line="337" selection-start-column="48" selection-end-line="337" selection-end-column="48" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2731#2732#0" expanded="true" />
-            <element signature="e#2800#2801#0" expanded="true" />
-            <element signature="e#5416#5417#0" expanded="true" />
-            <element signature="e#5471#5472#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/SearchByController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="97" column="5" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/projectdi/searchby.fxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -696,17 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/data/Data.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="37" selection-start-line="9" selection-start-column="37" selection-end-line="9" selection-end-column="37" />
-          <folding>
-            <element signature="e#651#652#0" expanded="true" />
-            <element signature="e#679#680#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/FilmCell.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -724,17 +674,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/Film.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/FilmHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="40" lean-forward="true" selection-start-column="8" selection-end-column="40" />
+          <caret column="40" selection-start-column="8" selection-end-column="40" />
         </state>
       </provider>
     </entry>
@@ -745,15 +688,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/mainLogic/MainLogic.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/films_retrieving/Film.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+        <state>
+          <caret column="8" selection-start-column="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/FilmData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="97" column="12" selection-start-line="97" selection-start-column="12" selection-end-line="97" selection-end-column="12" />
           <folding>
-            <element signature="e#1493#1494#0" expanded="true" />
-            <element signature="e#1535#1536#0" expanded="true" />
-            <element signature="e#6315#6316#0" expanded="true" />
-            <element signature="e#6354#6355#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/SearchByController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -761,16 +718,41 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/TransformationsHelper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="26" selection-start-column="26" selection-end-column="26" />
+          <caret column="38" selection-start-column="8" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/xml_retrieving/XPathHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        <state relative-caret-position="270">
+          <caret line="78" column="45" selection-start-line="78" selection-start-column="45" selection-end-line="78" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/data/Data.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="28" selection-start-column="8" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/projectdi/Logic/mainLogic/MainLogic.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="27" selection-start-line="2" selection-start-column="27" selection-end-line="2" selection-end-column="27" />
+          <folding>
+            <element signature="e#1493#1494#0" expanded="true" />
+            <element signature="e#1535#1536#0" expanded="true" />
+            <element signature="e#6315#6316#0" expanded="true" />
+            <element signature="e#6354#6355#0" expanded="true" />
+            <element signature="e#6414#6415#0" expanded="true" />
+            <element signature="e#6452#6453#0" expanded="true" />
           </folding>
         </state>
       </provider>
