@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import projectdi.Logic.exceptions.XMLNotFoundException;
 import projectdi.Logic.mainLogic.MainLogic;
 
 import java.io.IOException;
@@ -18,7 +19,7 @@ public class App extends Application {
     private MainLogic mainLogic;
 
     @Override
-    public void start(Stage stage) throws IOException {
+    public void start(Stage stage) throws IOException, XMLNotFoundException {
         mainLogic = new MainLogic();
         FXMLLoader loader = loadFXML("primary");
         PrimaryController primaryController = new PrimaryController(mainLogic);

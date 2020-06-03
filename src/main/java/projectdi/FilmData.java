@@ -9,6 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
+import projectdi.Logic.exceptions.XMLNotFoundException;
 import projectdi.Logic.films_retrieving.Film;
 import projectdi.Logic.mainLogic.MainLogic;
 
@@ -151,7 +152,7 @@ public class FilmData {
     }
 
     @FXML
-    public void deleteMovie() {
+    public void deleteMovie() throws IOException, XMLNotFoundException {
         mainLogic.deleteFilm(film.getTitle());
         context.refreshList();
     }

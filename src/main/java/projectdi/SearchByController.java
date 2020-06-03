@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import net.sf.saxon.s9api.SaxonApiException;
+import projectdi.Logic.exceptions.XMLNotFoundException;
 import projectdi.Logic.films_retrieving.Film;
 import projectdi.Logic.mainLogic.MainLogic;
 
@@ -74,32 +75,32 @@ public class SearchByController implements Initializable, Controller {
     }
 
     @FXML
-    public void searchByTitle() throws SaxonApiException {
+    public void searchByTitle() throws SaxonApiException, XMLNotFoundException {
         films.setAll(mainLogic.getxPathHelper().searchMovieByTitle(searchByTitleTextField.getText()));
         filmsListView.setItems(films);
     }
 
     @FXML
-    public void searchByDirector() throws SaxonApiException {
+    public void searchByDirector() throws SaxonApiException, XMLNotFoundException {
         films.setAll(mainLogic.getxPathHelper().searchMovieByDirector(searchByDirectorTextField.getText()));
         filmsListView.setItems(films);
     }
 
     @FXML
-    public void searchByActors() throws SaxonApiException {
+    public void searchByActors() throws SaxonApiException, XMLNotFoundException {
         List<String> list = FilmData.convertStringToList(searchByActorsTextField.getText());
         films.setAll(mainLogic.getxPathHelper().searchMovieByActors(list));
         filmsListView.setItems(films);
     }
 
     @FXML
-    public void searchByDuration() throws SaxonApiException {
+    public void searchByDuration() throws SaxonApiException, XMLNotFoundException {
         films.setAll(mainLogic.getxPathHelper().searchMovieByDuration(Integer.parseInt(searchByDuration1TextField.getText()), Integer.parseInt(searchByDuration2TextField.getText())));
         filmsListView.setItems(films);
     }
 
     @FXML
-    public void searchByCountry() throws SaxonApiException {
+    public void searchByCountry() throws SaxonApiException, XMLNotFoundException {
         films.setAll(mainLogic.getxPathHelper().searchMovieCountry(searchByCountryTextField.getText()));
         filmsListView.setItems(films);
     }

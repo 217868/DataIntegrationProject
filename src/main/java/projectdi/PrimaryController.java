@@ -8,6 +8,8 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import projectdi.Logic.exceptions.MovieNotFoundException;
+import projectdi.Logic.exceptions.XMLNotFoundException;
 import projectdi.Logic.films_retrieving.Film;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -41,6 +43,8 @@ public class PrimaryController implements Initializable, Controller {
     @FXML
     Label loadingLabel;
 
+    private boolean isSuccesfull = true;
+
     PrimaryController(MainLogic mainLogic) {
         this.mainLogic = mainLogic;
     }
@@ -63,12 +67,22 @@ public class PrimaryController implements Initializable, Controller {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                mainLogic.populateXMLFileFromTitlesListFile(listPathTextField.getText());
+                try {
+                    mainLogic.populateXMLFileFromTitlesListFile(listPathTextField.getText());
+                } catch (Exception e) {
+                    isSuccesfull = false;
+                }
                 films.setAll(mainLogic.getCurrentFilms());
                 Platform.runLater(new Runnable() {
                     @Override public void run() {
                         filmsListView.setItems(films);
-                        loadingLabel.setText("Data downloaded!");
+                        if (isSuccesfull)
+                            loadingLabel.setText("Data downloaded!");
+                        else
+                        {
+                            isSuccesfull = true;
+                            loadingLabel.setText("Data downloaded! - One or more films could not be found in Wikipedia");
+                        }
                     }
                 });
             }
@@ -81,12 +95,25 @@ public class PrimaryController implements Initializable, Controller {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                mainLogic.addMovie(movieTitleTextField.getText());
+                try {
+                    mainLogic.addMovie(movieTitleTextField.getText());
+                } catch (MovieNotFoundException e) {
+                    isSuccesfull = false;
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (XMLNotFoundException e) {
+                    e.printStackTrace();
+                }
                 films.setAll(mainLogic.getCurrentFilms());
                 Platform.runLater(new Runnable() {
                     @Override public void run() {
                         filmsListView.setItems(films);
-                        loadingLabel.setText("Data downloaded!");
+                        if (isSuccesfull)
+                            loadingLabel.setText("Data downloaded!");
+                        else {
+                            isSuccesfull = true;
+                            loadingLabel.setText("Selected movie could not be found");
+                        }
                     }
                 });
             }
