@@ -1,6 +1,5 @@
 package projectdi;
 
-import helpers.XMLElementsToFieldsMapping;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE film_base SYSTEM "films.dtd">
+<?xml-stylesheet type = "text/xsl" href = "directors_with_films.xsl"?>
 <film_base>
      <film image_link="https://upload.wikimedia.org/wikipedia/en/a/a0/A_Quiet_Place_film_poster.png" year="2018">
           <title>A Not So Quiet Place</title>
