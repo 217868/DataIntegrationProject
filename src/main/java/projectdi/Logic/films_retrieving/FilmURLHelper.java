@@ -2,10 +2,12 @@ package projectdi.Logic.films_retrieving;
 
 import helpers.Const;
 import imported.HttpRequestFunctions;
+import projectdi.Logic.exceptions.MovieNotFoundException;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
@@ -13,13 +15,15 @@ import java.util.regex.Pattern;
 
 public class FilmURLHelper {
 
-    public List<String> getUrlsFromTitles(String fileName) {
+    public List<String> getUrlsFromTitles(String fileName) throws MovieNotFoundException {
         Scanner s = null;
+
         try {
             s = new Scanner(new File(fileName));
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
         List<String> urls = new ArrayList<>();
 
         while(s.hasNextLine()) {
@@ -29,14 +33,14 @@ public class FilmURLHelper {
 
     }
 
-    public String searchFilmURL(String title){
+    public String searchFilmURL(String title) throws MovieNotFoundException {
         Scanner s = null;
 
 
         try {
             HttpRequestFunctions.httpRequest1(Const.SEARCH_URL.getValue(), title, Const.OUTPUT_FILE_NAME.getValue());
-        } catch(Exception e) {
-            System.out.println("Spierdalaj");
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         s = openFile(s);
 
@@ -52,7 +56,7 @@ public class FilmURLHelper {
             testHref = href;
         }
 
-        if (!checkIfPageIsMovie(s)) System.out.println("asdokasd"); //throw movie not found
+        if (!checkIfPageIsMovie(s)) throw new MovieNotFoundException("Move with title " + title + " not found");
 
         testHref = testHref.replace(' ', '_');
         return testHref;
@@ -105,18 +109,15 @@ public class FilmURLHelper {
 
             Matcher matcher1 = pattern1.matcher(line);
             if(matcher1.find()){
-                System.out.println("Znalazłem class mw-disambig");
                 Matcher matcher2 = urlPattern.matcher(line);
                 if(matcher2.find()){
                     Matcher matcher3 = excludePattern.matcher(line);
                     if (matcher3.find()) continue;
 
-                    System.out.println("Strona to disambiguation, wysyłam link do listy");
                     return Const.SEARCH_URL_SHORT.getValue() + matcher2.group();
                 }
             }
         }
-        System.out.println("Strona to nie disambiguation");
 
         return "";
     }
@@ -141,13 +142,11 @@ public class FilmURLHelper {
                 if(matcher2.find()){
                     Matcher matcher3 = urlPattern.matcher(line);
                     if (matcher3.find()) {
-                        System.out.println("Strona to lista, zwracam link do filmu");
                         return Const.SEARCH_URL_SHORT.getValue() + matcher3.group();
                     }
                 }
             }
         }
-        System.out.println("Strona to nie lista");
         return "";
     }
 
@@ -155,16 +154,18 @@ public class FilmURLHelper {
         if (!href.equals("")) {
             try {
                 HttpRequestFunctions.httpRequest1(href, "", Const.OUTPUT_FILE_NAME.getValue());
-            } catch (Exception e) {
-                System.out.println("Omglol");
+            } catch (IOException e) {
+                e.printStackTrace();
             }
+
         }
     }
 
     private Scanner openFile(Scanner s) {
+
         try {
             s = new Scanner(new File(Const.OUTPUT_FILE_NAME.getValue()));
-        } catch (Exception e) {
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         return s;

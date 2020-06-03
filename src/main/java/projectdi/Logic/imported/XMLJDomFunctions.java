@@ -10,6 +10,7 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
 import org.jdom2.output.XMLOutputter;
+import projectdi.Logic.exceptions.XMLNotFoundException;
 
 
 /**
@@ -30,7 +31,7 @@ public class XMLJDomFunctions{
 
     }
 
-    public static void writeDocumentToFile(Document doc, String caminhoFicheiro) {
+    public static void writeDocumentToFile(Document doc, String caminhoFicheiro) throws XMLNotFoundException, IOException {
         OutputStreamWriter writer = null;
         try {
             //Define o formato de saida
@@ -44,12 +45,12 @@ public class XMLJDomFunctions{
             outputter.output(doc, writer);
             writer.close();
         } catch (IOException ex) {
-            Logger.getLogger(XMLJDomFunctions.class.getName()).log(Level.SEVERE, null, ex);
+            throw new XMLNotFoundException(ex.getMessage());
         } finally {
             try {
                 writer.close();
             } catch (IOException ex) {
-                Logger.getLogger(XMLJDomFunctions.class.getName()).log(Level.SEVERE, null, ex);
+                throw new IOException(ex.getMessage());
             }
         }
 

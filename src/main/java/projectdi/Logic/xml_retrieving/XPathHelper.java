@@ -9,6 +9,7 @@ import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
+import projectdi.Logic.exceptions.XMLNotFoundException;
 import projectdi.Logic.imported.XPathFunctions;
 
 import java.io.ByteArrayInputStream;
@@ -19,19 +20,19 @@ import java.util.List;
 
 public class XPathHelper {
 
-    public List<Film> searchMovieByTitle(String title) throws SaxonApiException {
+    public List<Film> searchMovieByTitle(String title) throws SaxonApiException, XMLNotFoundException {
         String xPath = "film_base/film[title = '"+ title +"']";
         XdmValue x = XPathFunctions.executeXPath(xPath, Const.XML_FILE_NAME.getValue());
         return convertXdmToFilms(x);
     }
 
-    public List<Film> searchMovieByDirector(String director) throws SaxonApiException {
+    public List<Film> searchMovieByDirector(String director) throws SaxonApiException, XMLNotFoundException {
         String xPath = "film_base/film[directors/director = '" + director+ "']";
         XdmValue x = XPathFunctions.executeXPath(xPath, Const.XML_FILE_NAME.getValue());
         return convertXdmToFilms(x);
     }
 
-    public List<Film> searchMovieByActors(List<String> actors) throws SaxonApiException {
+    public List<Film> searchMovieByActors(List<String> actors) throws SaxonApiException, XMLNotFoundException {
         String condition = "";
         for(int i = 0; i < actors.size() - 1; i++){
             condition += "cast/actor = '" + actors.get(i) + "' or ";
@@ -43,13 +44,13 @@ public class XPathHelper {
         return convertXdmToFilms(x);
     }
 
-    public List<Film> searchMovieByDuration(int startBoundary, int endBoundary) throws SaxonApiException {
+    public List<Film> searchMovieByDuration(int startBoundary, int endBoundary) throws SaxonApiException, XMLNotFoundException {
         String xPath = "film_base/film[duration_in_minutes >= " + startBoundary + " and duration_in_minutes <= "+ endBoundary +"]";
         XdmValue x = XPathFunctions.executeXPath(xPath, Const.XML_FILE_NAME.getValue());
         return convertXdmToFilms(x);
     }
 
-    public List<Film> searchMovieCountry(String country) throws SaxonApiException {
+    public List<Film> searchMovieCountry(String country) throws SaxonApiException, XMLNotFoundException {
         String xPath = "film_base/film[countries/country = '" + country + "']";
         XdmValue x = XPathFunctions.executeXPath(xPath, Const.XML_FILE_NAME.getValue());
         return convertXdmToFilms(x);
@@ -76,6 +77,6 @@ public class XPathHelper {
             Element el = tempDoc.getRootElement().detach();
             doc.getRootElement().addContent(el);
         }
-        return projectdi.Logic.xml_retrieving.XMLBuilder.getFilmsFromXML(doc);
+        return XMLBuilder.getFilmsFromXML(doc);
     }
 }

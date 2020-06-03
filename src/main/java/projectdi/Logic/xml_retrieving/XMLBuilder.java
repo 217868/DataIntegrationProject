@@ -4,9 +4,13 @@ import projectdi.Logic.films_retrieving.Film;
 import helpers.Const;
 import imported.XMLJDomFunctions;
 import org.jdom2.Attribute;
+import org.jdom2.Content;
 import org.jdom2.Document;
 import org.jdom2.Element;
+import projectdi.Logic.exceptions.ElementNotFoundException;
+import projectdi.Logic.exceptions.XMLNotFoundException;
 
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -23,7 +27,7 @@ public class XMLBuilder {
         this.document = document;
     }
 
-    public void addFilm(Film film){
+    public void addFilm(Film film) throws IOException, XMLNotFoundException {
         Element filmElement = new Element("film");
         Attribute imageLink = new Attribute("image_link", film.getImage());
         filmElement.setAttribute(imageLink);
@@ -90,7 +94,7 @@ public class XMLBuilder {
         XMLJDomFunctions.writeDocumentToFile(document, Const.XML_FILE_NAME.getValue());
     }
 
-    public void addFilms(List<Film> films){
+    public void addFilms(List<Film> films) throws IOException, XMLNotFoundException {
         for(Film f : films) addFilm(f);
     }
 
@@ -153,38 +157,67 @@ public class XMLBuilder {
         return films;
     }
 
-    public void deleteFilm(String title){
+    public void deleteFilm(String title) throws ElementNotFoundException {
         document.getRootElement().removeContent(getElementByTitle(title));
     }
 
-    public void editElement(String title, String subElementName, String oldValue, String newValue){
+    public void editElement(String title, Film film) throws ElementNotFoundException {
 //        if(getElementByTitle(title).getChild(subElementName) != null){
 //            getElementByTitle(title).getChild(subElementName).setText(newValue);
 //        }
 //        else
-        Element toEditElement = getElementByTitle(title).getChild(subElementName);
-        if (toEditElement.getChildren().size() > 0) {
-            for (Element e : toEditElement.getChildren()) {
-                if (e.getValue().equals(oldValue)) e.setText(newValue);
-            }
+        Element toEditElement = getElementByTitle(title);
+        toEditElement.getChild("title").setText(film.getTitle());
+        toEditElement.getChild("release_date_in_USA").setText(film.getReleaseDateInUSA().toString());
+
+        for(String s : film.getCountries()){
+            Element e = new Element("country").addContent(s);
+            toEditElement.getChild("countries").addContent(e);
         }
-        else {
-            toEditElement.setText(newValue);
+
+        for(String s : film.getDirectors()){
+            Element e = new Element("director").addContent(s);
+            toEditElement.getChild("directors").addContent(e);
         }
+
+        for(String s : film.getCast()){
+            Element e = new Element("actor").addContent(s);
+            toEditElement.getChild("cast").addContent(e);
+        }
+
+        toEditElement.getChild("duration_in_minutes").setText(String.valueOf(film.getDurationInMinutes()));
+
+        for(String s : film.getDistributedBy()){
+            Element e = new Element("distributor").addContent(s);
+            toEditElement.getChild("distributor").addContent(e);
+        }
+
+        for(String s : film.getLanguages()){
+            Element e = new Element("language").addContent(s);
+            toEditElement.getChild("languages").addContent(e);
+        }
+
+        for(String s : film.getMusicAuthor()){
+            Element e = new Element("musicAuthor").addContent(s);
+            toEditElement.getChild("music_authors").addContent(e);
+        }
+
+        toEditElement.getChild("box_office").setText(String.valueOf(film.getBoxOffice()));
+        toEditElement.setAttribute("year", String.valueOf(film.getYear()));
+        toEditElement.setAttribute("image_link", film.getImage());
+
     }
 
-    public void editAttribute(String title, String attributeName, String newValue){
+    public void editAttribute(String title, String attributeName, String newValue) throws ElementNotFoundException {
         Element toEditElement = getElementByTitle(title);
         toEditElement.setAttribute(attributeName, newValue);
     }
 
-    private Element getElementByTitle(String title){
+    private Element getElementByTitle(String title) throws ElementNotFoundException {
         for(Element e : document.getRootElement().getChildren()){
             if(e.getChild("title").getValue().equals(title)) return e;
         }
-        //todo: throw
-        System.out.println("not found");
-        return null;
+        throw new ElementNotFoundException("Film with title " + title + " not found");
     }
 
 }

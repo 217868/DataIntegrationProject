@@ -4,6 +4,7 @@ import helpers.Const;
 import imported.HttpRequestFunctions;
 
 import java.io.File;
+import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
@@ -75,12 +76,13 @@ public class FilmHelper {
         Scanner s = null;
         List<String> resultBox = new ArrayList<>();
 
-        try{
+        try {
             HttpRequestFunctions.httpRequest1(url, "", Const.OUTPUT_FILE_NAME.getValue());
             s = new Scanner(new File(Const.OUTPUT_FILE_NAME.getValue()));
-        } catch (Exception e){
-            System.out.println(e.getMessage());
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+
 
 
         int lineCounter = 0;
