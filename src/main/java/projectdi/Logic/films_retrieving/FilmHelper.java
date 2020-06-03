@@ -1,4 +1,4 @@
-package films_retrieving;
+package projectdi.Logic.films_retrieving;
 
 import helpers.Const;
 import imported.HttpRequestFunctions;
@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class FilmHelper {
     private List<String> infoBox;
 
-    public List<films_retrieving.Film> createFilms(List<String> urls) {
+    public List<Film> createFilms(List<String> urls) {
         List<Film> list = new ArrayList<>();
         for (String s : urls) {
             list.add(createFilm(s));
@@ -21,7 +21,7 @@ public class FilmHelper {
         return list;
     }
 
-    public films_retrieving.Film createFilm(String url){
+    public Film createFilm(String url){
         getInfoBox(url);
         return new Film(getTitle(),
                 getImageLink(),

@@ -1,13 +1,15 @@
 package projectdi.Logic.mainLogic;
 
-import data.Data;
-import films_retrieving.FilmHelper;
-import films_retrieving.FilmURLHelper;
+import projectdi.Logic.data.Data;
+import projectdi.Logic.films_retrieving.FilmHelper;
+import projectdi.Logic.films_retrieving.FilmURLHelper;
+import projectdi.Logic.films_retrieving.Film;
 import helpers.Const;
 import helpers.XMLElementsToFieldsMapping;
 import projectdi.Logic.xml_retrieving.ValidatorHelper;
-import xml_retrieving.TransformationsHelper;
-import xml_retrieving.XMLBuilder;
+import projectdi.Logic.xml_retrieving.XPathHelper;
+import projectdi.Logic.xml_retrieving.TransformationsHelper;
+import projectdi.Logic.xml_retrieving.XMLBuilder;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +25,7 @@ public class MainLogic {
     private XMLBuilder xmlBuilder;
     private ValidatorHelper validatorHelper;
     private TransformationsHelper transformationsHelper;
+    private XPathHelper xPathHelper;
 
     public MainLogic(){
         this.data = new Data();
@@ -31,6 +34,7 @@ public class MainLogic {
         this.xmlBuilder = new XMLBuilder(data.getDocument());
         this.validatorHelper = new ValidatorHelper();
         this.transformationsHelper = new TransformationsHelper();
+        this.xPathHelper = new XPathHelper();
 
     }
 
@@ -42,14 +46,14 @@ public class MainLogic {
         }
         return false;
     }
-    private void addListOfFilms(List<films_retrieving.Film> films) {
+    private void addListOfFilms(List<Film> films) {
         xmlBuilder.addFilms(films);
     }
 
     public void populateXMLFileFromTitlesListFile(String fileName) {
         data.clearDocument();
         data.reloadDocumentObject();
-        List<films_retrieving.Film> films = filmHelper.createFilms(filmURLHelper.getUrlsFromTitles(fileName));
+        List<Film> films = filmHelper.createFilms(filmURLHelper.getUrlsFromTitles(fileName));
         System.out.println(films.size());
         this.data.setFilms(films);
         System.out.println(films.size());
@@ -58,7 +62,7 @@ public class MainLogic {
     }
 
     public void addMovie(String title) {
-        films_retrieving.Film film = filmHelper.createFilm(filmURLHelper.searchFilmURL(title));
+        Film film = filmHelper.createFilm(filmURLHelper.searchFilmURL(title));
         if (data.getFilms().contains(film)) return; //throw
         data.getFilms().add(film);
         xmlBuilder.addFilm(film);
@@ -69,7 +73,7 @@ public class MainLogic {
     public void deleteFilm(String title){
         boolean doestTitleExist = false;
         int deleteIndex = -1;
-        for(films_retrieving.Film f : data.getFilms()){
+        for(Film f : data.getFilms()){
             if(f.getTitle().equals(title)){
                 deleteIndex = data.getFilms().indexOf(f);
                 doestTitleExist = true;
@@ -85,8 +89,8 @@ public class MainLogic {
     }
 
     public void editFilm(String title, String oldValue, String newValue, XMLElementsToFieldsMapping elementName){
-        films_retrieving.Film filmToEdit = null;
-        for (films_retrieving.Film f : data.getFilms()) {
+        Film filmToEdit = null;
+        for (Film f : data.getFilms()) {
             if (f.getTitle().equals(title)) filmToEdit = f;
         }
         boolean isAttribute = false;
@@ -179,6 +183,14 @@ public class MainLogic {
 
     public void getHTMLwithYearsWithMovies(){
         transformationsHelper.getYearsWithMovies();
+    }
+
+    public XPathHelper getxPathHelper() {
+        return this.xPathHelper;
+    }
+
+    public List<Film> getCurrentFilms() {
+        return data.getFilms();
     }
 
 }

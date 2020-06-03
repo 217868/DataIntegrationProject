@@ -1,6 +1,6 @@
 package projectdi.Logic.xml_retrieving;
 
-import films_retrieving.Film;
+import projectdi.Logic.films_retrieving.Film;
 import helpers.Const;
 import helpers.XMLElementsToFieldsMapping;
 import net.sf.saxon.s9api.SaxonApiException;
@@ -76,6 +76,6 @@ public class XPathHelper {
             Element el = tempDoc.getRootElement().detach();
             doc.getRootElement().addContent(el);
         }
-        return xml_retrieving.XMLBuilder.getFilmsFromXML(doc);
+        return projectdi.Logic.xml_retrieving.XMLBuilder.getFilmsFromXML(doc);
     }
 }

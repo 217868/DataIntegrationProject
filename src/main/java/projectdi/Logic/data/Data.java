@@ -1,13 +1,13 @@
-package data;
+package projectdi.Logic.data;
 
-import films_retrieving.Film;
+import projectdi.Logic.films_retrieving.Film;
 import helpers.Const;
 import imported.XMLJDomFunctions;
 import org.jdom2.DocType;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
-import xml_retrieving.XMLBuilder;
+import projectdi.Logic.xml_retrieving.XMLBuilder;
 
 import java.io.IOException;
 import java.util.ArrayList;

@@ -1,187 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE film_base SYSTEM "films.dtd">
 <film_base>
-     <film image_link="https://en.wikipedia.org/wiki/File:The_Hobbit-_An_Unexpected_Journey.jpeg" year="2012">
-          <title>The Hobbit: An Unexpected Journey</title>
-          <release_date_in_USA>2012-12-14</release_date_in_USA>
-          <countries>
-               <country>New Zealand</country>
-               <country>United States</country>
-          </countries>
-          <directors>
-               <director>Peter Jackson</director>
-          </directors>
-          <cast>
-               <actor>Ian McKellen</actor>
-               <actor>Martin Freeman</actor>
-               <actor>Richard Armitage</actor>
-               <actor>James Nesbitt</actor>
-               <actor>Ken Stott</actor>
-               <actor>Cate Blanchett</actor>
-               <actor>Ian Holm</actor>
-               <actor>Christopher Lee</actor>
-               <actor>Hugo Weaving</actor>
-               <actor>Elijah Wood</actor>
-               <actor>Andy Serkis</actor>
-          </cast>
-          <duration_in_minutes>169</duration_in_minutes>
-          <distributors>
-               <distributor>Warner Bros. Pictures</distributor>
-          </distributors>
-          <languages>
-               <language>English</language>
-          </languages>
-          <music_authors>
-               <musicAuthor>Howard Shore</musicAuthor>
-          </music_authors>
-          <box_office>0.0</box_office>
-     </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Toy_Story.jpg" year="1995">
-          <title>Toy Story</title>
-          <release_date_in_USA>1995-11-22</release_date_in_USA>
-          <countries>
-               <country>United States</country>
-          </countries>
-          <directors>
-               <director>John Lasseter</director>
-          </directors>
-          <cast>
-               <actor>Tom Hanks</actor>
-               <actor>Tim Allen</actor>
-               <actor>Don Rickles</actor>
-               <actor>Jim Varney</actor>
-               <actor>Wallace Shawn</actor>
-               <actor>John Ratzenberger</actor>
-               <actor>Annie Potts</actor>
-               <actor>John Morris</actor>
-               <actor>Erik von Detten</actor>
-          </cast>
-          <duration_in_minutes>81</duration_in_minutes>
-          <distributors>
-               <distributor>Buena Vista Pictures Distribution</distributor>
-          </distributors>
-          <languages>
-               <language>English</language>
-          </languages>
-          <music_authors>
-               <musicAuthor>Randy Newman</musicAuthor>
-          </music_authors>
-          <box_office>0.0</box_office>
-     </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Dr_dolittle_movie_1998.jpg" year="1998">
-          <title>Dr. Dolittle</title>
-          <release_date_in_USA>1998-06-26</release_date_in_USA>
-          <countries>
-               <country>United States</country>
-          </countries>
-          <directors>
-               <director>Betty Thomas</director>
-          </directors>
-          <cast>
-               <actor>Eddie Murphy</actor>
-               <actor>Ossie Davis</actor>
-               <actor>Oliver Platt</actor>
-          </cast>
-          <duration_in_minutes>85</duration_in_minutes>
-          <distributors>
-               <distributor>20th Century Fox</distributor>
-          </distributors>
-          <languages>
-               <language>English</language>
-          </languages>
-          <music_authors>
-               <musicAuthor>Richard Gibbs</musicAuthor>
-          </music_authors>
-          <box_office>294.4</box_office>
-     </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Sonic_the_Hedgehog_poster.jpg" year="2020">
-          <title>Sonic the Hedgehog</title>
-          <release_date_in_USA>2020-02-14</release_date_in_USA>
-          <countries>
-               <country>United States</country>
-               <country>Japan</country>
-          </countries>
-          <directors>
-               <director>Jeff Fowler</director>
-          </directors>
-          <cast>
-               <actor>James Marsden</actor>
-               <actor>Ben Schwartz</actor>
-               <actor>Tika Sumpter</actor>
-               <actor>Jim Carrey</actor>
-          </cast>
-          <duration_in_minutes>99</duration_in_minutes>
-          <distributors>
-               <distributor>Paramount Pictures</distributor>
-          </distributors>
-          <languages>
-               <language>English</language>
-          </languages>
-          <music_authors>
-               <musicAuthor>Tom Holkenborg</musicAuthor>
-          </music_authors>
-          <box_office>306.8</box_office>
-     </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Schindler%27s_List_movie.jpg" year="1993">
-          <title>Schindler's List</title>
-          <release_date_in_USA>1993-12-15</release_date_in_USA>
-          <countries>
-               <country>United States</country>
-          </countries>
-          <directors>
-               <director>Steven Spielberg</director>
-          </directors>
-          <cast>
-               <actor>Liam Neeson</actor>
-               <actor>Ben Kingsley</actor>
-               <actor>Ralph Fiennes</actor>
-               <actor>Caroline Goodall</actor>
-               <actor>Jonathan Sagall</actor>
-               <actor>Embeth Davidtz</actor>
-          </cast>
-          <duration_in_minutes>195</duration_in_minutes>
-          <distributors>
-               <distributor>Universal Pictures</distributor>
-          </distributors>
-          <languages>
-               <language>English</language>
-          </languages>
-          <music_authors>
-               <musicAuthor>John Williams</musicAuthor>
-          </music_authors>
-          <box_office>322.3</box_office>
-     </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:TheTigerAndTheSnow.jpg" year="1900">
-          <title>La tigre e la neve</title>
-          <release_date_in_USA>1900-01-01</release_date_in_USA>
-          <countries>
-               <country>Italy</country>
-          </countries>
-          <directors>
-               <director>Roberto Benigni</director>
-          </directors>
-          <cast>
-               <actor>Roberto Benigni</actor>
-               <actor>Jean Reno</actor>
-               <actor>Nicoletta Braschi</actor>
-               <actor>Emilia Fox</actor>
-          </cast>
-          <duration_in_minutes>118</duration_in_minutes>
-          <distributors>
-               <distributor />
-          </distributors>
-          <languages>
-               <language>Italian</language>
-               <language>English</language>
-               <language>Arabic</language>
-          </languages>
-          <music_authors>
-               <musicAuthor />
-          </music_authors>
-          <box_office>0.0</box_office>
-     </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:A_Quiet_Place_film_poster.png" year="2018">
-          <title>A Quiet Place</title>
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/a/a0/A_Quiet_Place_film_poster.png" year="2018">
+          <title>A Not So Quiet Place</title>
           <release_date_in_USA>2018-04-06</release_date_in_USA>
           <countries>
                <country>United States</country>
@@ -206,42 +27,7 @@
           </music_authors>
           <box_office>340.9</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Pulp_Fiction_(1994)_poster.jpg" year="1994">
-          <title>Pulp Fiction</title>
-          <release_date_in_USA>1994-10-14</release_date_in_USA>
-          <countries>
-               <country>United States</country>
-          </countries>
-          <directors>
-               <director>Quentin Tarantino</director>
-          </directors>
-          <cast>
-               <actor>John Travolta</actor>
-               <actor>Samuel L. Jackson</actor>
-               <actor>Uma Thurman</actor>
-               <actor>Harvey Keitel</actor>
-               <actor>Tim Roth</actor>
-               <actor>Amanda Plummer</actor>
-               <actor>Maria de Medeiros</actor>
-               <actor>Ving Rhames</actor>
-               <actor>Eric Stoltz</actor>
-               <actor>Rosanna Arquette</actor>
-               <actor>Christopher Walken</actor>
-               <actor>Bruce Willis</actor>
-          </cast>
-          <duration_in_minutes>154</duration_in_minutes>
-          <distributors>
-               <distributor>Miramax Films</distributor>
-          </distributors>
-          <languages>
-               <language>English</language>
-          </languages>
-          <music_authors>
-               <musicAuthor />
-          </music_authors>
-          <box_office>213.9</box_office>
-     </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Thelma_%26_Louise_poster.png" year="1991">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/8/8f/Thelma_%26_Louise_poster.png/220px-Thelma_%26_Louise_poster.png" year="1991">
           <title>Thelma &amp;amp; Louise</title>
           <release_date_in_USA>1991-05-24</release_date_in_USA>
           <countries>
@@ -267,7 +53,7 @@
           </music_authors>
           <box_office>45.4</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Blade_Runner_(1982_poster).png" year="1982">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Blade_Runner_%281982_poster%29.png/220px-Blade_Runner_%281982_poster%29.png" year="1982">
           <title>Blade Runner</title>
           <release_date_in_USA>1982-06-25</release_date_in_USA>
           <countries>
@@ -295,7 +81,7 @@
           </music_authors>
           <box_office>41.5</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Alien_movie_poster.jpg" year="1979">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Alien_movie_poster.jpg/220px-Alien_movie_poster.jpg" year="1979">
           <title>Alien</title>
           <release_date_in_USA>1979-05-25</release_date_in_USA>
           <countries>
@@ -326,7 +112,7 @@
           </music_authors>
           <box_office>203.6</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Back_to_the_Future.jpg" year="1985">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Back_to_the_Future.jpg/220px-Back_to_the_Future.jpg" year="1985">
           <title>Back to the Future</title>
           <release_date_in_USA>1985-07-03</release_date_in_USA>
           <countries>
@@ -353,7 +139,7 @@
           </music_authors>
           <box_office>389.1</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:E_t_the_extra_terrestrial_ver3.jpg" year="1982">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/6/66/E_t_the_extra_terrestrial_ver3.jpg/220px-E_t_the_extra_terrestrial_ver3.jpg" year="1982">
           <title>E.T. the Extra-Terrestrial</title>
           <release_date_in_USA>1982-06-11</release_date_in_USA>
           <countries>
@@ -379,7 +165,7 @@
           </music_authors>
           <box_office>792.9</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Good_Will_Hunting.png" year="1997">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/5/52/Good_Will_Hunting.png/220px-Good_Will_Hunting.png" year="1997">
           <title>Good Will Hunting</title>
           <release_date_in_USA>1997-12-05</release_date_in_USA>
           <countries>
@@ -407,7 +193,7 @@
           </music_authors>
           <box_office>225.9</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Talented_mr_ripley.jpg" year="1999">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/2/22/Talented_mr_ripley.jpg/220px-Talented_mr_ripley.jpg" year="1999">
           <title>The Talented Mr. Ripley</title>
           <release_date_in_USA>1999-12-25</release_date_in_USA>
           <countries>
@@ -440,7 +226,7 @@
           </music_authors>
           <box_office>0.0</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:The_accidental_tourist.jpg" year="1988">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/8/8c/The_accidental_tourist.jpg/220px-The_accidental_tourist.jpg" year="1988">
           <title>The Accidental Tourist</title>
           <release_date_in_USA>1988-12-23</release_date_in_USA>
           <countries>
@@ -467,7 +253,7 @@
           </music_authors>
           <box_office>32.6</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Match_Point_poster.png" year="2006">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/8/82/Match_Point_poster.png" year="2006">
           <title>Match Point</title>
           <release_date_in_USA>2006-01-20</release_date_in_USA>
           <countries>
@@ -498,7 +284,7 @@
           </music_authors>
           <box_office>85.3</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Avengers_Infinity_War_poster.jpg" year="2018">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/4/4d/Avengers_Infinity_War_poster.jpg" year="2018">
           <title>Avengers: Infinity War</title>
           <release_date_in_USA>2018-04-27</release_date_in_USA>
           <countries>
@@ -541,7 +327,7 @@
           </music_authors>
           <box_office>0.0</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Vicky_Cristina_Barcelona_film_poster.png" year="2008">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/0/05/Vicky_Cristina_Barcelona_film_poster.png" year="2008">
           <title>Vicky Cristina Barcelona</title>
           <release_date_in_USA>2008-08-15</release_date_in_USA>
           <countries>
@@ -576,7 +362,7 @@
           </music_authors>
           <box_office>96.4</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Larry_Crowne_Poster.jpg" year="2011">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/d/df/Larry_Crowne_Poster.jpg" year="2011">
           <title>Larry Crowne</title>
           <release_date_in_USA>2011-07-01</release_date_in_USA>
           <countries>
@@ -607,7 +393,7 @@
           </music_authors>
           <box_office>72.0</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Anniehallposter.jpg" year="1979">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/e/e6/Anniehallposter.jpg/220px-Anniehallposter.jpg" year="1979">
           <title>Annie Hall</title>
           <release_date_in_USA>1979-07-02</release_date_in_USA>
           <countries>
@@ -639,7 +425,7 @@
           </music_authors>
           <box_office>38.3</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Midnight_in_Paris_Poster.jpg" year="2011">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/9/9f/Midnight_in_Paris_Poster.jpg" year="2011">
           <title>Midnight in Paris</title>
           <release_date_in_USA>2011-05-20</release_date_in_USA>
           <countries>
@@ -670,7 +456,7 @@
           </music_authors>
           <box_office>154.1</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:The_Village_FilmPoster.jpeg" year="1953">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/3/3c/The_Village_FilmPoster.jpeg/220px-The_Village_FilmPoster.jpeg" year="1953">
           <title>The Village</title>
           <release_date_in_USA>1953-04-25</release_date_in_USA>
           <countries>
@@ -695,7 +481,7 @@
           </music_authors>
           <box_office>0.0</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Charliewilsonwarposter.jpg" year="2007">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/8/89/Charliewilsonwarposter.jpg/220px-Charliewilsonwarposter.jpg" year="2007">
           <title>Charlie Wilson's War</title>
           <release_date_in_USA>2007-12-21</release_date_in_USA>
           <countries>
@@ -723,7 +509,7 @@
           </music_authors>
           <box_office>119.5</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Movie_poster_the_terminal.jpg" year="2004">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/8/86/Movie_poster_the_terminal.jpg/220px-Movie_poster_the_terminal.jpg" year="2004">
           <title>The Terminal</title>
           <release_date_in_USA>2004-06-18</release_date_in_USA>
           <countries>
@@ -751,7 +537,7 @@
           </music_authors>
           <box_office>219.4</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Cast_away_film_poster.jpg" year="2000">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/a/a7/Cast_away_film_poster.jpg/220px-Cast_away_film_poster.jpg" year="2000">
           <title>Cast Away</title>
           <release_date_in_USA>2000-12-22</release_date_in_USA>
           <countries>
@@ -780,7 +566,7 @@
           </music_authors>
           <box_office>429.6</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Saving_Private_Ryan_poster.jpg" year="1998">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/a/ac/Saving_Private_Ryan_poster.jpg/220px-Saving_Private_Ryan_poster.jpg" year="1998">
           <title>Saving Private Ryan</title>
           <release_date_in_USA>1998-07-24</release_date_in_USA>
           <countries>
@@ -809,7 +595,7 @@
           </music_authors>
           <box_office>482.3</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Quills_poster.JPG" year="2000">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/c/cb/Quills_poster.JPG/220px-Quills_poster.JPG" year="2000">
           <title>Quills</title>
           <release_date_in_USA>2000-11-22</release_date_in_USA>
           <countries>
@@ -839,7 +625,7 @@
           </music_authors>
           <box_office>18.0</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Walk_the_line_poster.jpg" year="2005">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/5/5a/Walk_the_line_poster.jpg/220px-Walk_the_line_poster.jpg" year="2005">
           <title>Walk the Line</title>
           <release_date_in_USA>2005-11-18</release_date_in_USA>
           <countries>
@@ -866,7 +652,7 @@
           </music_authors>
           <box_office>187.0</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Pretty_woman_movie.jpg" year="1990">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/b/b6/Pretty_woman_movie.jpg" year="1990">
           <title>Pretty Woman</title>
           <release_date_in_USA>1990-03-23</release_date_in_USA>
           <countries>
@@ -892,7 +678,7 @@
           </music_authors>
           <box_office>463.4</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:TheRunawayBrideFilmPoster.jpg" year="1930">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/1/13/TheRunawayBrideFilmPoster.jpg/220px-TheRunawayBrideFilmPoster.jpg" year="1930">
           <title>The Runaway Bride</title>
           <release_date_in_USA>1930-05-04</release_date_in_USA>
           <countries>
@@ -919,7 +705,7 @@
           </music_authors>
           <box_office>0.0</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Ocean%27s_Eleven_2001_Poster.jpg" year="2001">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/6/68/Ocean%27s_Eleven_2001_Poster.jpg" year="2001">
           <title>Ocean's Eleven</title>
           <release_date_in_USA>2001-12-07</release_date_in_USA>
           <countries>
@@ -947,7 +733,7 @@
           </music_authors>
           <box_office>450.7</box_office>
      </film>
-     <film image_link="https://en.wikipedia.org/wiki/File:Smurfs_The_Lost_Village_poster.jpg" year="2017">
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/0/07/Smurfs_The_Lost_Village_poster.jpg/220px-Smurfs_The_Lost_Village_poster.jpg" year="2017">
           <title>Smurfs: The Lost Village</title>
           <release_date_in_USA>2017-04-07</release_date_in_USA>
           <countries>
@@ -980,5 +766,71 @@
                <musicAuthor>Christopher Lennertz</musicAuthor>
           </music_authors>
           <box_office>197.2</box_office>
+     </film>
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/4/4c/Die_Hard_With_A_Vengance.jpg/220px-Die_Hard_With_A_Vengance.jpg" year="1995">
+          <title>Die Hard with a Vengeance</title>
+          <release_date_in_USA>1995-05-19</release_date_in_USA>
+          <countries>
+               <country>United States</country>
+          </countries>
+          <directors>
+               <director>John McTiernan</director>
+          </directors>
+          <cast>
+               <actor>Bruce Willis</actor>
+               <actor>Jeremy Irons</actor>
+               <actor>Samuel L. Jackson</actor>
+               <actor>Graham Greene</actor>
+               <actor>Colleen Camp</actor>
+               <actor>Larry Bryggman</actor>
+               <actor>Sam Phillips</actor>
+          </cast>
+          <duration_in_minutes>128</duration_in_minutes>
+          <distributors>
+               <distributor>20th Century Fox</distributor>
+               <distributor />
+          </distributors>
+          <languages>
+               <language>English</language>
+          </languages>
+          <music_authors>
+               <musicAuthor>Michael Kamen</musicAuthor>
+          </music_authors>
+          <box_office>366.1</box_office>
+     </film>
+     <film image_link="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Kick-Ass_film_poster.jpg/220px-Kick-Ass_film_poster.jpg" year="2010">
+          <title>Kick-Ass</title>
+          <release_date_in_USA>2010-04-16</release_date_in_USA>
+          <countries>
+               <country>United Kingdom</country>
+               <country>United States</country>
+          </countries>
+          <directors>
+               <director>Matthew Vaughn</director>
+          </directors>
+          <cast>
+               <actor>Aaron Johnson</actor>
+               <actor>Christopher Mintz-Plasse</actor>
+               <actor>Mark Strong</actor>
+               <actor>Chloë Grace Moretz</actor>
+               <actor>Nicolas Cage</actor>
+          </cast>
+          <duration_in_minutes>117</duration_in_minutes>
+          <distributors>
+               <distributor>Lionsgate</distributor>
+               <distributor>(United States)</distributor>
+               <distributor>Universal Pictures</distributor>
+               <distributor>(International)</distributor>
+          </distributors>
+          <languages>
+               <language>English</language>
+          </languages>
+          <music_authors>
+               <musicAuthor>John Murphy</musicAuthor>
+               <musicAuthor>Henry Jackman</musicAuthor>
+               <musicAuthor>Marius de Vries</musicAuthor>
+               <musicAuthor>Ilan Eshkeri</musicAuthor>
+          </music_authors>
+          <box_office>96.2</box_office>
      </film>
 </film_base>

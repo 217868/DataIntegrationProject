@@ -1,4 +1,4 @@
-package xml_retrieving;
+package projectdi.Logic.xml_retrieving;
 
 import helpers.Const;
 import imported.JDOMFunctions_XSLT;
