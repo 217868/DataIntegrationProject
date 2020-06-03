@@ -1,13 +1,16 @@
 package projectdi.Logic.mainLogic;
 
+import projectdi.Logic.data.Data;
+import projectdi.Logic.films_retrieving.FilmHelper;
+import projectdi.Logic.films_retrieving.FilmURLHelper;
+import projectdi.Logic.films_retrieving.Film;
 import helpers.Const;
 import helpers.XMLElementsToFieldsMapping;
 import projectdi.Logic.data.Data;
 import projectdi.Logic.exceptions.*;
-import projectdi.Logic.films_retrieving.FilmHelper;
-import projectdi.Logic.films_retrieving.FilmURLHelper;
 import projectdi.Logic.xml_retrieving.TransformationsHelper;
 import projectdi.Logic.xml_retrieving.ValidatorHelper;
+import projectdi.Logic.xml_retrieving.XPathHelper;
 import projectdi.Logic.xml_retrieving.XMLBuilder;
 
 
@@ -26,6 +29,7 @@ public class MainLogic {
     private XMLBuilder xmlBuilder;
     private ValidatorHelper validatorHelper;
     private TransformationsHelper transformationsHelper;
+    private XPathHelper xPathHelper;
 
     public MainLogic() throws IOException, XMLNotFoundException {
         this.data = new Data();
@@ -34,20 +38,21 @@ public class MainLogic {
         this.xmlBuilder = new XMLBuilder(data.getDocument());
         this.validatorHelper = new ValidatorHelper();
         this.transformationsHelper = new TransformationsHelper();
+        this.xPathHelper = new XPathHelper();
 
     }
 
     public boolean validate() throws ValidationFailedException, IOException, XMLNotFoundException {
         return validatorHelper.validate();
     }
-    private void addListOfFilms(List<films_retrieving.Film> films) throws IOException, XMLNotFoundException {
+    private void addListOfFilms(List<Film> films) throws IOException, XMLNotFoundException {
         xmlBuilder.addFilms(films);
     }
 
     public void populateXMLFileFromTitlesListFile(String fileName) throws MovieNotFoundException, IOException, XMLNotFoundException {
         data.clearDocument();
         data.reloadDocumentObject();
-        List<films_retrieving.Film> films = filmHelper.createFilms(filmURLHelper.getUrlsFromTitles(fileName));
+        List<Film> films = filmHelper.createFilms(filmURLHelper.getUrlsFromTitles(fileName));
         System.out.println(films.size());
         this.data.setFilms(films);
         System.out.println(films.size());
@@ -55,8 +60,8 @@ public class MainLogic {
 
     }
 
-    public void addMovie(String title) throws MovieNotFoundException, IOException, XMLNotFoundException {
-        films_retrieving.Film film = filmHelper.createFilm(filmURLHelper.searchFilmURL(title));
+public void addMovie(String title) throws MovieNotFoundException, IOException, XMLNotFoundException {
+        Film film = filmHelper.createFilm(filmURLHelper.searchFilmURL(title));
         if (data.getFilms().contains(film)) return; //throw
         data.getFilms().add(film);
         xmlBuilder.addFilm(film);
@@ -67,7 +72,7 @@ public class MainLogic {
     public void deleteFilm(String title) throws IOException, XMLNotFoundException {
         boolean doestTitleExist = false;
         int deleteIndex = -1;
-        for(films_retrieving.Film f : data.getFilms()){
+        for(Film f : data.getFilms()){
             if(f.getTitle().equals(title)){
                 deleteIndex = data.getFilms().indexOf(f);
                 doestTitleExist = true;
@@ -86,9 +91,9 @@ public class MainLogic {
         data.saveListToFile();
     }
 
-    public void editFilm(String title, films_retrieving.Film film){
-        films_retrieving.Film filmToEdit = null;
-        for (films_retrieving.Film f : data.getFilms()) {
+    public void editFilm(String title, Film film){
+        Film filmToEdit = null;
+        for (Film f : data.getFilms()) {
             if (f.getTitle().equals(title)) filmToEdit = f;
         }
         filmToEdit = film;
@@ -128,6 +133,14 @@ public class MainLogic {
 
     public void getHTMLwithYearsWithMovies() throws FileNotFoundException, XMLNotFoundException, TransformationFailedException {
         transformationsHelper.getYearsWithMovies();
+    }
+
+    public XPathHelper getxPathHelper() {
+        return this.xPathHelper;
+    }
+
+    public List<Film> getCurrentFilms() {
+        return data.getFilms();
     }
 
 }

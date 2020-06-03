@@ -1,6 +1,6 @@
 package projectdi.Logic.xml_retrieving;
 
-import films_retrieving.Film;
+import projectdi.Logic.films_retrieving.Film;
 import helpers.Const;
 import imported.XMLJDomFunctions;
 import org.jdom2.Attribute;

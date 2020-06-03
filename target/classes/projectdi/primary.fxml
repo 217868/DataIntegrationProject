@@ -1,16 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.control.Label?>
+<?import java.net.URL?>
 <?import javafx.scene.control.Button?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="projectdi.PrimaryController">
-   <children>
-      <Label text="Primary View" />
-      <Button fx:id="primaryButton" text="Switch to Secondary View" onAction="#switchToSecondary"/>
-   </children>
-   <padding>
-      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-   </padding>
-</VBox>
+<BorderPane styleClass="main-window" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/11.0.1">
+   <top>
+      <BorderPane styleClass="header-section">
+         <left>
+            <Label id="header-text" text="DI Movies App" />
+         </left>
+      </BorderPane>
+   </top>
+   <left>
+      <VBox styleClass="sidebar-section">
+         <children>
+            <Button text="Movies list" />
+            <Button onMouseClicked="#switchToSecondary" text="Options" />
+            <Button onMouseClicked="#switchToSearchBy" text="Search by" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox styleClass="content-section">
+         <children>
+            <Label id="content-header" text="Movie List" />
+            <Label id="content">
+               <text>
+                  Enter a name of the file containing list of titles
+               </text>
+            </Label>
+            <HBox>
+               <children>
+                  <TextField prefHeight="26.0" prefWidth="607.0" text="films.txt" fx:id="listPathTextField">films.txt</TextField>
+                  <Button fx:id="getMoviesButton" onMouseClicked="#getMoviesFromWiki">Get movies from Wiki</Button>
+               </children>
+            </HBox>
+            <Label>
+               <text>
+                  Or enter a movie title
+               </text>
+            </Label>
+            <HBox>
+               <children>
+                  <TextField prefHeight="26.0" prefWidth="607.0" text="films.txt" fx:id="movieTitleTextField">films.txt</TextField>
+                  <Button fx:id="getMovieButton" onMouseClicked="#getMovieFromWiki">Get movie from Wiki</Button>
+               </children>
+            </HBox>
+            <Label fx:id="loadingLabel" />
+            <ListView fx:id="filmsListView"/>
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox id="footer-section">
+         <children>
+            <Label text="2020 Emilia Markowska and Arkadiusz Zasina" />
+         </children>
+      </HBox>
+   </bottom>
+   <stylesheets>
+      <URL value="@app.css" />
+   </stylesheets>
+</BorderPane>

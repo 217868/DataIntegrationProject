@@ -1,6 +1,6 @@
 package projectdi.Logic.xml_retrieving;
 
-import films_retrieving.Film;
+import projectdi.Logic.films_retrieving.Film;
 import helpers.Const;
 import helpers.XMLElementsToFieldsMapping;
 import net.sf.saxon.s9api.SaxonApiException;

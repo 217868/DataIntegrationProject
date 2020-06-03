@@ -1,4 +1,4 @@
-package films_retrieving;
+package projectdi.Logic.films_retrieving;
 
 import java.util.Date;
 import java.util.List;
@@ -33,6 +33,21 @@ public class Film {
         this.languages = languages; // elements
         this.musicAuthor = musicAuthor; // element
         this.boxOffice = boxOffice; // element
+    }
+
+    public Film(Film film) {
+        this.title = film.title; // element
+        this.image = film.image; // attribute
+        this.year = film.year; // attribute
+        this.releaseDateInUSA = film.releaseDateInUSA; // element
+        this.countries = film.countries; //elements
+        this.directors = film.directors; // elements
+        this.cast = film.cast; // elements
+        this.durationInMinutes = film.durationInMinutes; //element
+        this.distributedBy = film.distributedBy; // element
+        this.languages = film.languages; // elements
+        this.musicAuthor = film.musicAuthor; // element
+        this.boxOffice = film.boxOffice; // element
     }
 
     public String getTitle() {

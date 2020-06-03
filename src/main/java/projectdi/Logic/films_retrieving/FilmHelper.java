@@ -14,17 +14,17 @@ import java.util.regex.Pattern;
 public class FilmHelper {
     private List<String> infoBox;
 
-    public List<films_retrieving.Film> createFilms(List<String> urls) {
-        List<films_retrieving.Film> list = new ArrayList<>();
+    public List<Film> createFilms(List<String> urls) {
+        List<Film> list = new ArrayList<>();
         for (String s : urls) {
             list.add(createFilm(s));
         }
         return list;
     }
 
-    public films_retrieving.Film createFilm(String url){
+    public Film createFilm(String url){
         getInfoBox(url);
-        return new films_retrieving.Film(getTitle(),
+        return new Film(getTitle(),
                 getImageLink(),
                 getYearOfRelease(),
                 getReleaseDate(),
