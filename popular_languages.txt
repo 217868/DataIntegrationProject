@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>Language:  Number of films: 1
+Language: American Sign Language Number of films: 1
+Language: English Number of films: 26
+Language: German Number of films: 2
+Language: Latin Number of films: 1
+Language: Spanish Number of films: 1

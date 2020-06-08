@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE film_base SYSTEM "films.dtd">
+<?xml-stylesheet type = "text/xsl" href = "directors_with_films.xsl"?>
 <film_base>
      <film image_link="https://upload.wikimedia.org/wikipedia/en/b/b3/The_Hobbit-_An_Unexpected_Journey.jpeg" year="2012">
           <title>The Hobbit: An Unexpected Journey</title>

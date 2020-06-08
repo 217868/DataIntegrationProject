@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane styleClass="main-window" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <BorderPane styleClass="header-section">
+         <left>
+            <Label id="header-text" text="DI Movies App" />
+         </left>
+      </BorderPane>
+   </top>
+   <left>
+      <VBox styleClass="sidebar-section">
+         <children>
+            <Button onMouseClicked="#switchToPrimary" text="Movies list" />
+            <Button onMouseClicked="#switchToSecondary" text="Options" />
+            <Button text="Search by" />
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <VBox styleClass="content-section">
+         <children>
+            <Label id="content-header" text="Search movies" />
+            <Label id="content">
+               <text>
+            Search movies in the database by:
+
+               </text>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" layoutX="30.0" layoutY="72.0">
+               <children>
+                  <Label text="Title: " />
+                  <TextField fx:id="searchByTitleTextField" prefHeight="26.0" prefWidth="597.0" text="Alien" />
+                  <Button fx:id="searchByTitleButton" onMouseClicked="#searchByTitle" text="Search" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Label text="Director:" />
+                  <TextField fx:id="searchByDirectorTextField" prefHeight="26.0" prefWidth="597.0" text="Woody Allen"/>
+                  <Button fx:id="searchByDirectorButton" onMouseClicked="#searchByDirector" text="Search">Get movies from Wiki</Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT">
+               <children>
+                  <Label text="Actors:" />
+                  <TextField fx:id="searchByActorsTextField" prefHeight="26.0" prefWidth="597.0" text="Tom Hanks" />
+                  <Button fx:id="searchByActorsButton" onMouseClicked="#searchByActors" text="Search" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="30.0" layoutY="124.0">
+               <children>
+                  <Label text="Duration from:" />
+                  <TextField fx:id="searchByDuration1TextField" prefHeight="26.0" prefWidth="252.0" text="80" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="19.0" layoutY="15.0" prefHeight="16.0" prefWidth="27.0" text="to:" textAlignment="CENTER" />
+                  <TextField fx:id="searchByDuration2TextField" layoutX="108.0" layoutY="10.0" prefHeight="26.0" prefWidth="242.0" text="100" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="547.0" layoutY="15.0" prefHeight="16.0" prefWidth="76.0" text="minutes" />
+                  <Button fx:id="searchByDurationButton" onMouseClicked="#searchByDuration" text="Search" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="30.0" layoutY="151.0">
+               <children>
+                  <Label text="Country:" />
+                  <TextField fx:id="searchByCountryTextField" prefHeight="26.0" prefWidth="597.0" text="United States" />
+                  <Button fx:id="searchByCountryButton" onMouseClicked="#searchByCountry" text="Search" />
+               </children>
+            </HBox>
+            <Label fx:id="loadingLabel" />
+            <ListView fx:id="filmsListView" />
+         </children>
+      </VBox>
+   </center>
+   <bottom>
+      <HBox id="footer-section">
+         <children>
+            <Label text="2020 Emilia Markowska and Arkadiusz Zasina" />
+         </children>
+      </HBox>
+   </bottom>
+   <stylesheets>
+      <URL value="@app.css" />
+   </stylesheets>
+</BorderPane>
