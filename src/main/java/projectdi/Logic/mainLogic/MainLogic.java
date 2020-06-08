@@ -31,7 +31,7 @@ public class MainLogic {
     private TransformationsHelper transformationsHelper;
     private XPathHelper xPathHelper;
 
-    public MainLogic() throws IOException, XMLNotFoundException {
+    public MainLogic() throws IOException{
         this.data = new Data();
         this.filmHelper = new FilmHelper();
         this.filmURLHelper = new FilmURLHelper();
@@ -42,14 +42,14 @@ public class MainLogic {
 
     }
 
-    public boolean validate() throws ValidationFailedException, IOException, XMLNotFoundException {
+    public boolean validate() throws ValidationFailedException, IOException{
         return validatorHelper.validate();
     }
-    private void addListOfFilms(List<Film> films) throws IOException, XMLNotFoundException {
+    private void addListOfFilms(List<Film> films) throws IOException{
         xmlBuilder.addFilms(films);
     }
 
-    public void populateXMLFileFromTitlesListFile(String fileName) throws MovieNotFoundException, IOException, XMLNotFoundException {
+    public void populateXMLFileFromTitlesListFile(String fileName) throws IOException {
         data.clearDocument();
         data.reloadDocumentObject();
         List<Film> films = filmHelper.createFilms(filmURLHelper.getUrlsFromTitles(fileName));
@@ -57,10 +57,11 @@ public class MainLogic {
         this.data.setFilms(films);
         System.out.println(films.size());
         addListOfFilms(data.getFilms());
+       // data.saveListToFile();
 
     }
 
-public void addMovie(String title) throws MovieNotFoundException, IOException, XMLNotFoundException {
+public void addMovie(String title) throws  IOException{
         Film film = filmHelper.createFilm(filmURLHelper.searchFilmURL(title));
         if (data.getFilms().contains(film)) return; //throw
         data.getFilms().add(film);
@@ -69,7 +70,7 @@ public void addMovie(String title) throws MovieNotFoundException, IOException, X
     }
 
 
-    public void deleteFilm(String title) throws IOException, XMLNotFoundException {
+    public void deleteFilm(String title) throws IOException {
         boolean doestTitleExist = false;
         int deleteIndex = -1;
         for(Film f : data.getFilms()){
@@ -82,33 +83,20 @@ public void addMovie(String title) throws MovieNotFoundException, IOException, X
 
         //todo: throw exception
         if(!doestTitleExist) return;
-        try {
             xmlBuilder.deleteFilm(title);
-        } catch (ElementNotFoundException e) {
-            e.printStackTrace();
-        }
-
         data.saveListToFile();
     }
 
-    public void editFilm(String title, Film film){
+    public void editFilm(String title, Film film) throws IOException{
         Film filmToEdit = null;
         for (Film f : data.getFilms()) {
             if (f.getTitle().equals(title)) filmToEdit = f;
         }
         filmToEdit = film;
-        try {
+
             xmlBuilder.editElement(title, film);
-        } catch (ElementNotFoundException e) {
-            e.printStackTrace();
-        }
-        try {
-            data.saveListToFile();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (XMLNotFoundException e) {
-            e.printStackTrace();
-        }
+
+        data.saveListToFile();
     }
 
     public void getHTMLwithPhotosOfFilms() throws FileNotFoundException, XMLNotFoundException, TransformationFailedException {

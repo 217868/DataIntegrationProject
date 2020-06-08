@@ -95,8 +95,6 @@ public class SecondaryController {
             validLabel.setText("INVALID");
         } catch (IOException e) {
             e.printStackTrace();
-        } catch (XMLNotFoundException e) {
-            e.printStackTrace();
         }
     }
 }

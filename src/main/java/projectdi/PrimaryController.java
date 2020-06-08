@@ -97,11 +97,7 @@ public class PrimaryController implements Initializable, Controller {
             public void run() {
                 try {
                     mainLogic.addMovie(movieTitleTextField.getText());
-                } catch (MovieNotFoundException e) {
-                    isSuccesfull = false;
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (XMLNotFoundException e) {
+                }  catch (IOException e) {
                     e.printStackTrace();
                 }
                 films.setAll(mainLogic.getCurrentFilms());

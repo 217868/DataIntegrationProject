@@ -2,11 +2,11 @@ package projectdi.Logic.data;
 
 import projectdi.Logic.films_retrieving.Film;
 import helpers.Const;
-import imported.XMLJDomFunctions;
 import org.jdom2.DocType;
 import org.jdom2.Document;
 import org.jdom2.Element;
 import org.jdom2.JDOMException;
+import projectdi.Logic.imported.XMLJDomFunctions;
 import projectdi.Logic.xml_retrieving.XMLBuilder;
 import projectdi.Logic.exceptions.XMLNotFoundException;
 import projectdi.Logic.xml_retrieving.XMLBuilder;
@@ -19,7 +19,7 @@ public class Data {
     private List<Film> films;
     private Document document;
 
-    public Data() throws IOException, XMLNotFoundException {
+    public Data() {
         initializeDocument();
         films = XMLBuilder.getFilmsFromXML(this.document);
         this.document.setDocType(new DocType("film_base", Const.DTD_FILE_NAME.getValue()));
@@ -39,20 +39,20 @@ public class Data {
         this.films = films;
     }
 
-    public void saveListToFile() throws IOException, XMLNotFoundException {
+    public void saveListToFile() {
         XMLJDomFunctions.writeDocumentToFile(this.document, Const.XML_FILE_NAME.getValue());
     }
 
-    public void reloadDocumentObject() throws IOException, XMLNotFoundException {
+    public void reloadDocumentObject(){
         initializeDocument();
     }
 
-    public void clearDocument() throws IOException, XMLNotFoundException {
+    public void clearDocument() {
         document.getRootElement().removeContent();
         saveListToFile();
     }
 
-    private void initializeDocument() throws IOException, XMLNotFoundException {
+    private void initializeDocument() {
         try {
             this.document = XMLJDomFunctions.readXMLDocument(Const.XML_FILE_NAME.getValue());
         } catch (IOException e) {

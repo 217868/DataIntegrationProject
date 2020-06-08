@@ -14,23 +14,24 @@ import java.util.logging.Logger;
 
 public class JDOMFunctions_Validation {
 
-    public static Document validateDTD(String xmlFile) throws ValidationFailedException, XMLNotFoundException {
+    public static Document validateDTD(String xmlFile){
         try {
             SAXBuilder builder = new SAXBuilder(true);
             Document doc = builder.build(new File(xmlFile));
             System.out.println("Document XML " + xmlFile + " is valid (DTD)");
             return doc;
         } catch (JDOMException ex) {
-            throw new ValidationFailedException("Document XML " + xmlFile + " is not valid (DTD)");
+           ex.printStackTrace();
         } catch (IOException ex) {
-            throw new XMLNotFoundException("Document XML " + xmlFile + " not found");
+           ex.printStackTrace();
             //Logger.getLogger(JDOMFunctions_Validation.class.getName()).log(Level.SEVERE, null, ex);
         }
+        return null;
     }
 
 
 
-    public static Document validateXSD(String xmlFile) throws ValidationFailedException, XMLNotFoundException {
+    public static Document validateXSD(String xmlFile){
         try {
             SAXBuilder builder = new SAXBuilder(true);
 
@@ -41,10 +42,11 @@ public class JDOMFunctions_Validation {
             System.out.println("Document XML " + xmlFile + " is valid (XSD)");
             return doc;
         } catch (JDOMException ex) {
-            throw new ValidationFailedException("Document XML " + xmlFile + " is not valid (XSD)");
+            ex.printStackTrace();
            // Logger.getLogger(JDOMFunctions_Validation.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException e) {
-            throw new XMLNotFoundException("Document XML " + xmlFile + " not found");
+            e.printStackTrace();
         }
+        return null;
     }
 }

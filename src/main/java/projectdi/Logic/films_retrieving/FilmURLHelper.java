@@ -15,7 +15,7 @@ import java.util.regex.Pattern;
 
 public class FilmURLHelper {
 
-    public List<String> getUrlsFromTitles(String fileName) throws MovieNotFoundException {
+    public List<String> getUrlsFromTitles(String fileName) {
         Scanner s = null;
 
         try {
@@ -33,7 +33,7 @@ public class FilmURLHelper {
 
     }
 
-    public String searchFilmURL(String title) throws MovieNotFoundException {
+    public String searchFilmURL(String title) {
         Scanner s = null;
 
 
@@ -56,7 +56,7 @@ public class FilmURLHelper {
             testHref = href;
         }
 
-        if (!checkIfPageIsMovie(s)) throw new MovieNotFoundException("Move with title " + title + " not found");
+        if (!checkIfPageIsMovie(s)) return "";
 
         testHref = testHref.replace(' ', '_');
         return testHref;

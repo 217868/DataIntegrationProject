@@ -1,4 +1,4 @@
-package imported;/*
+package projectdi.Logic.imported;/*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
@@ -31,7 +31,7 @@ public class XMLJDomFunctions{
 
     }
 
-    public static void writeDocumentToFile(Document doc, String caminhoFicheiro) throws XMLNotFoundException, IOException {
+    public static void writeDocumentToFile(Document doc, String caminhoFicheiro) {
         OutputStreamWriter writer = null;
         try {
             //Define o formato de saida
@@ -45,12 +45,12 @@ public class XMLJDomFunctions{
             outputter.output(doc, writer);
             writer.close();
         } catch (IOException ex) {
-            throw new XMLNotFoundException(ex.getMessage());
+            ex.printStackTrace();
         } finally {
             try {
                 writer.close();
             } catch (IOException ex) {
-                throw new IOException(ex.getMessage());
+                ex.printStackTrace();
             }
         }
 

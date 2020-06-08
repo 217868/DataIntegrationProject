@@ -10,17 +10,17 @@ import java.io.IOException;
 
 public class ValidatorHelper {
 
-    public boolean dtdValidation() throws IOException, ValidationFailedException, XMLNotFoundException {
+    public boolean dtdValidation() throws IOException, ValidationFailedException{
         if(JDOMFunctions_Validation.validateDTD(Const.XML_FILE_NAME.getValue()) == null) return false;
         return true;
     }
 
-    public boolean xsdValidation() throws ValidationFailedException, XMLNotFoundException {
+    public boolean xsdValidation() throws ValidationFailedException {
         if(JDOMFunctions_Validation.validateXSD(Const.XML_FILE_NAME.getValue()) == null) return false;
         return true;
     }
 
-    public boolean validate() throws IOException, ValidationFailedException, XMLNotFoundException {
+    public boolean validate() throws IOException, ValidationFailedException{
         return xsdValidation() && dtdValidation();
     }
 }

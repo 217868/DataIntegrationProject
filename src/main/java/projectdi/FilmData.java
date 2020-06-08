@@ -1,6 +1,5 @@
 package projectdi;
 
-import helpers.XMLElementsToFieldsMapping;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -135,7 +134,7 @@ public class FilmData {
 
 
 
-        releaseDateLabel.setText(film.getReleaseDateInUSA().toString());
+        releaseDateLabel.setText(new SimpleDateFormat("yyyy-MM-dd").format(film.getReleaseDateInUSA()));
         yearLabel.setText(film.getYear() + "");
         countriesLabel.setText(convertTableToString(film.getCountries()));
         castLabel.setText(convertTableToString(film.getCast()));
@@ -158,14 +157,14 @@ public class FilmData {
     }
 
     @FXML
-    public void onEditTitle() {
+    public void onEditTitle() throws IOException, XMLNotFoundException {
         Film filmCopy = new Film(film);
         if(titleLabel.isManaged()) {
             activateEdit(titleLabel, titleLabelEditTextField);
         } else {
             deactivateEdit(titleLabel, titleLabelEditTextField);
             filmCopy.setTitle(titleLabelEditTextField.getText());
-           // mainLogic.editFilm(film.getTitle(), filmCopy);
+            mainLogic.editFilm(film.getTitle(), filmCopy);
             context.refreshList();
         }
     }
@@ -173,142 +172,142 @@ public class FilmData {
 
 
     @FXML
-    public void onEditDirectors() {
+    public void onEditDirectors() throws IOException, XMLNotFoundException {
         Film filmCopy = new Film(film);
         if(directorsLabel.isManaged()) {
             activateEdit(directorsLabel, directorsLabelEditTextField );
         } else {
             deactivateEdit(directorsLabel, directorsLabelEditTextField);
             filmCopy.setDirectors(convertStringToList(directorsLabelEditTextField.getText()));
-            // mainLogic.editFilm(film.getTitle(), filmCopy);
+            mainLogic.editFilm(film.getTitle(), filmCopy);
             context.refreshList();
         }
     }
 
 
     @FXML
-    public void onEditReleaseDate() throws ParseException {
+    public void onEditReleaseDate() throws ParseException, IOException, XMLNotFoundException {
         Film filmCopy = new Film(film);
         if(releaseDateLabel.isManaged()) {
             activateEdit(releaseDateLabel, releaseDateLabelEditTextField );
         } else {
             deactivateEdit(releaseDateLabel, releaseDateLabelEditTextField);
-            Date date1=new SimpleDateFormat("dd/MM/yyyy").parse(releaseDateLabelEditTextField.getText());
+            Date date1=new SimpleDateFormat("yyyy-MM-dd").parse(releaseDateLabelEditTextField.getText());
 
             filmCopy.setReleaseDateInUSA(date1);
-            // mainLogic.editFilm(film.getTitle(), filmCopy);
+            mainLogic.editFilm(film.getTitle(), filmCopy);
             context.refreshList();
         }
     }
 
 
     @FXML
-    public void onEditYear() {
+    public void onEditYear() throws IOException, XMLNotFoundException {
         Film filmCopy = new Film(film);
         if(yearLabel.isManaged()) {
             activateEdit(yearLabel, yearLabelEditTextField );
         } else {
             deactivateEdit(yearLabel, yearLabelEditTextField);
             filmCopy.setYear(Integer.parseInt(yearLabelEditTextField.getText()));
-            // mainLogic.editFilm(film.getTitle(), filmCopy);
+            mainLogic.editFilm(film.getTitle(), filmCopy);
             context.refreshList();
         }
     }
 
 
     @FXML
-    public void onEditCountries() {
+    public void onEditCountries() throws IOException, XMLNotFoundException {
         Film filmCopy = new Film(film);
         if(countriesLabel.isManaged()) {
             activateEdit(countriesLabel, countriesLabelEditTextField );
         } else {
             deactivateEdit(countriesLabel, countriesLabelEditTextField);
             filmCopy.setCountries(convertStringToList(countriesLabelEditTextField.getText()));
-            // mainLogic.editFilm(film.getTitle(), filmCopy);
+            mainLogic.editFilm(film.getTitle(), filmCopy);
             context.refreshList();
         }
     }
 
 
     @FXML
-    public void onEditCast() {
+    public void onEditCast() throws IOException, XMLNotFoundException {
         Film filmCopy = new Film(film);
         if(castLabel.isManaged()) {
             activateEdit(castLabel, castLabelEditTextField );
         } else {
             deactivateEdit(castLabel, castLabelEditTextField);
             filmCopy.setCast(convertStringToList(castLabelEditTextField.getText()));
-            // mainLogic.editFilm(film.getTitle(), filmCopy);
+            mainLogic.editFilm(film.getTitle(), filmCopy);
             context.refreshList();
         }
     }
 
 
     @FXML
-    public void onEditDuration() {
+    public void onEditDuration() throws IOException, XMLNotFoundException {
         Film filmCopy = new Film(film);
         if(durationLabel.isManaged()) {
             activateEdit(durationLabel, durationLabelEditTextField );
         } else {
             deactivateEdit(durationLabel, durationLabelEditTextField);
             filmCopy.setDurationInMinutes(Integer.parseInt(durationLabelEditTextField.getText()));
-            // mainLogic.editFilm(film.getTitle(), filmCopy);
+            mainLogic.editFilm(film.getTitle(), filmCopy);
             context.refreshList();
         }
     }
 
 
     @FXML
-    public void onEditDistributors() {
+    public void onEditDistributors() throws IOException, XMLNotFoundException {
         Film filmCopy = new Film(film);
         if(distributedByLabel.isManaged()) {
             activateEdit(distributedByLabel, distributedByLabelEditTextField );
         } else {
             deactivateEdit(distributedByLabel, distributedByLabelEditTextField);
             filmCopy.setDistributedBy(convertStringToList(distributedByLabelEditTextField.getText()));
-            // mainLogic.editFilm(film.getTitle(), filmCopy);
+            mainLogic.editFilm(film.getTitle(), filmCopy);
             context.refreshList();
         }
     }
 
 
     @FXML
-    public void onEditLanguages() {
+    public void onEditLanguages() throws IOException, XMLNotFoundException {
         Film filmCopy = new Film(film);
         if(languagesLabel.isManaged()) {
             activateEdit(languagesLabel, languagesLabelEditTextField );
         } else {
             deactivateEdit(languagesLabel, languagesLabelEditTextField);
             filmCopy.setLanguages(convertStringToList(languagesLabelEditTextField.getText()));
-            // mainLogic.editFilm(film.getTitle(), filmCopy);
+            mainLogic.editFilm(film.getTitle(), filmCopy);
             context.refreshList();
         }
     }
 
 
     @FXML
-    public void onEditBoxOffice() {
+    public void onEditBoxOffice() throws IOException, XMLNotFoundException {
         Film filmCopy = new Film(film);
         if(boxOfficeLabel.isManaged()) {
             activateEdit(boxOfficeLabel, boxOfficeLabelEditTextField );
         } else {
             deactivateEdit(boxOfficeLabel, boxOfficeLabelEditTextField);
             filmCopy.setBoxOffice(Float.parseFloat(boxOfficeLabelEditTextField.getText()));
-            // mainLogic.editFilm(film.getTitle(), filmCopy);
+            mainLogic.editFilm(film.getTitle(), filmCopy);
             context.refreshList();
         }
     }
 
 
     @FXML
-    public void onEditMusic() {
+    public void onEditMusic() throws IOException, XMLNotFoundException {
         Film filmCopy = new Film(film);
         if(musicLabel.isManaged()) {
             activateEdit(musicLabel, musicLabelEditTextField );
         } else {
             deactivateEdit(musicLabel, musicLabelEditTextField);
             filmCopy.setMusicAuthor(convertStringToList(musicLabelEditTextField.getText()));
-            // mainLogic.editFilm(film.getTitle(), filmCopy);
+            mainLogic.editFilm(film.getTitle(), filmCopy);
             context.refreshList();
         }
     }
